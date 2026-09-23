@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root{
+  --bg:#f4f2ed;
+  --ink:#101010;
+  --muted:#70706b;
+  --line:#d5d2ca;
+  --white:#fff;
+  --accent:#d8ff45;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+button{cursor:pointer}
+.announcement{background:#111;color:#fff;text-align:center;padding:10px 16px;font-size:11px;letter-spacing:.18em;font-weight:700}
+.site-header{height:82px;padding:0 4vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(244,242,237,.95);backdrop-filter:blur(12px);z-index:20}
+.brand{display:flex;align-items:center;gap:10px;font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:20px}
+.brand img{width:42px;height:42px;object-fit:contain;border-radius:50%}
+.desktop-nav{display:flex;gap:34px;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+.desktop-nav a:hover{opacity:.55}
+.header-actions{display:flex;gap:8px;align-items:center}
+.header-actions button{border:0;background:transparent;padding:9px;font-size:13px}
+.menu-btn{display:none}
+.search-bar{display:none;padding:14px 4vw;border-bottom:1px solid var(--line)}
+.search-bar.open{display:block}
+.search-bar input{width:100%;padding:14px;border:1px solid var(--line);background:var(--white);outline:none}
+.mobile-menu{display:none}
+.hero{min-height:680px;padding:70px 7vw;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;overflow:hidden}
+.eyebrow{font-size:11px;letter-spacing:.2em;font-weight:700;margin:0 0 18px}
+.hero h1,.section-heading h2,.about h2,.newsletter h2{font-family:"Space Grotesk",sans-serif;font-size:clamp(54px,8vw,112px);line-height:.86;letter-spacing:-.065em;margin:0}
+.hero h1 em{font-style:normal;-webkit-text-stroke:1.5px var(--ink);color:transparent}
+.hero-text{max-width:470px;color:#555;margin:30px 0;font-size:17px;line-height:1.7}
+.button{display:inline-flex;align-items:center;justify-content:center;border:0;background:var(--ink);color:#fff;padding:15px 23px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:.2s}
+.button:hover{background:#333;transform:translateY(-2px)}
+.button.small{padding:11px 14px;font-size:10px}
+.hero-art{height:500px;position:relative}
+.crochet-card{position:absolute;right:12%;top:5%;width:58%;height:72%;border-radius:46% 46% 42% 42%;background:repeating-linear-gradient(135deg,#171717 0,#171717 5px,#292929 6px,#111 10px);box-shadow:18px 22px 0 #d8d5cc;display:flex;align-items:center;justify-content:center;transform:rotate(7deg)}
+.crochet-card .city{font-family:"Space Grotesk";font-size:clamp(70px,10vw,130px);font-weight:700;color:#f4f2ed;border:4px solid #f4f2ed;border-radius:50%;padding:25px 18px}
+.crochet-card small{position:absolute;bottom:32px;left:30px;color:#fff;font-size:8px;letter-spacing:.16em}
+.card-two{right:46%;top:34%;width:43%;height:50%;transform:rotate(-12deg);background:repeating-linear-gradient(135deg,#e6e0d3 0,#e6e0d3 5px,#c9c0af 6px,#eee8dc 10px);box-shadow:12px 15px 0 #111}
+.card-two .city{color:#111;border-color:#111}
+.card-two small{color:#111}
+.ticker{background:var(--accent);border-top:1px solid #111;border-bottom:1px solid #111;padding:13px;display:flex;justify-content:space-around;gap:15px;font-size:11px;font-weight:800;letter-spacing:.15em}
+.section{padding:110px 5vw}
+.section-heading{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:45px}
+.section-heading h2{font-size:clamp(42px,6vw,80px)}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filter{border:1px solid var(--line);background:transparent;padding:10px 14px;text-transform:uppercase;font-size:10px;letter-spacing:.1em}
+.filter.active,.filter:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.product-image{aspect-ratio:1/1.08;background:#dedbd3;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.product-image:before{content:"";width:64%;height:52%;border-radius:45% 45% 35% 35%;background:repeating-linear-gradient(135deg,#222 0,#222 5px,#333 6px,#111 10px);transform:rotate(-3deg)}
+.product-image.la:before{background:repeating-linear-gradient(135deg,#ded5c5 0,#ded5c5 5px,#b9ae9c 6px,#e8e0d3 10px)}
+.product-image.other:before{background:repeating-linear-gradient(135deg,#46514b 0,#46514b 5px,#657067 6px,#343d39 10px)}
+.product-city{position:absolute;font-family:"Space Grotesk";font-weight:700;font-size:56px;color:#fff;z-index:1}
+.product-image.la .product-city{color:#111}
+.product-image.other .product-city{color:#fff}
+.product-info{padding:13px 2px 25px}
+.product-info h3{font-size:14px;margin:0 0 6px;font-weight:600}
+.product-meta{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px}
+.add-btn{border:1px solid var(--ink);background:transparent;padding:7px 9px;font-size:10px;text-transform:uppercase;font-weight:700}
+.add-btn:hover{background:var(--ink);color:#fff}
+.collections{display:grid;grid-template-columns:1.2fr 1fr 1fr;min-height:480px}
+.collection{padding:50px;background:#d9d5cc;display:flex;flex-direction:column;justify-content:end;border-right:1px solid #aaa}
+.collection.large{background:#c7c0b1}
+.collection.dark{background:#151515;color:#fff;border:0}
+.collection span{font-size:11px;letter-spacing:.15em;margin-bottom:auto}
+.collection h3{font-family:"Space Grotesk";font-size:clamp(35px,4vw,65px);line-height:.9;margin:0 0 15px;letter-spacing:-.05em}
+.collection p{max-width:280px;color:inherit;opacity:.7;line-height:1.6}
+.collection a{font-size:11px;font-weight:700;letter-spacing:.12em;margin-top:20px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:10vw;padding:120px 10vw;background:#fff}
+.about h2{font-size:clamp(45px,6vw,80px)}
+.about p{font-size:18px;line-height:1.8;color:#555;max-width:560px}
+.newsletter{padding:120px 7vw;text-align:center;background:var(--accent)}
+.newsletter h2{font-size:clamp(45px,7vw,90px)}
+.newsletter form{display:flex;max-width:600px;margin:40px auto 0}
+.newsletter input{flex:1;border:1px solid #111;border-right:0;background:transparent;padding:16px;outline:none}
+.newsletter .button{border:1px solid #111}
+.small-message{font-size:12px;font-weight:600}
+footer{background:#111;color:#fff;padding:70px 5vw 30px;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;position:relative}
+footer img{width:55px;height:55px;border-radius:50%;object-fit:contain}
+footer h3{font-family:"Space Grotesk";font-size:25px;margin:15px 0 5px}
+footer h4{font-size:10px;letter-spacing:.18em;margin:0 0 18px}
+footer a{display:block;color:#aaa;font-size:13px;margin:0 0 12px}
+footer p{color:#aaa;font-size:13px;line-height:1.6;max-width:260px}
+.copyright{position:absolute;bottom:12px;left:5vw;color:#555;font-size:10px}
+.cart-drawer{position:fixed;right:-430px;top:0;width:min(430px,100%);height:100vh;background:#fff;z-index:50;transition:.3s;display:flex;flex-direction:column;padding:28px}
+.cart-drawer.open{right:0}
+.cart-head{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:18px}
+.cart-head h2{font-family:"Space Grotesk";margin:0}
+.cart-head button{border:0;background:transparent;font-size:28px}
+#cart-items{flex:1;overflow:auto;padding-top:20px}
+.cart-item{display:grid;grid-template-columns:70px 1fr auto;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.cart-thumb{background:#ddd;width:70px;height:70px;display:flex;align-items:center;justify-content:center;font-weight:700}
+.cart-bottom{border-top:1px solid var(--line);padding-top:18px}
+.cart-bottom>div{display:flex;justify-content:space-between;margin-bottom:18px}
+.full{width:100%}
+.tiny{font-size:10px;color:#888;line-height:1.5}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:40;display:none}
+.overlay.open{display:block}
+@media(max-width:900px){
+  .desktop-nav{display:none}.menu-btn{display:block}
+  .hero{grid-template-columns:1fr;min-height:auto;padding-top:55px}.hero-art{height:430px}
+  .product-grid{grid-template-columns:repeat(2,1fr)}
+  .collections{grid-template-columns:1fr}.collection{min-height:360px;border-right:0;border-bottom:1px solid #aaa}
+  .about{grid-template-columns:1fr;padding:80px 7vw}
+  footer{grid-template-columns:1fr 1fr;padding-bottom:70px}
+}
+@media(max-width:560px){
+  .site-header{height:68px}.brand span{font-size:16px}.brand img{width:35px;height:35px}
+  .hero{padding:45px 6vw}.hero h1{font-size:64px}.hero-art{height:350px}
+  .crochet-card{width:62%;height:70%}.card-two{width:46%}
+  .section{padding:75px 5vw}.section-heading{display:block}.filters{margin-top:25px}
+  .product-grid{gap:12px}.product-info h3{font-size:12px}
+  .newsletter{padding:80px 6vw}.newsletter form{display:block}.newsletter input{width:100%;border-right:1px solid #111;margin-bottom:8px}.newsletter .button{width:100%}
+  footer{grid-template-columns:1fr}.copyright{position:static;margin-top:20px}
+}

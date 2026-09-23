@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="249_stitch — handmade crochet snapbacks inspired by New York, Los Angeles and more.">
+  <title>249_stitch | Crochet Snapbacks</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">HANDMADE CROCHET SNAPBACKS • NEW DROPS COMING SOON</div>
+
+  <header class="site-header">
+    <a class="brand" href="#home">
+      <img src="assets/logo.png" alt="249_stitch logo">
+      <span>249_stitch</span>
+    </a>
+
+    <nav class="desktop-nav">
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#collections">Collections</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button aria-label="Search" onclick="toggleSearch()">⌕</button>
+      <button aria-label="Cart" onclick="openCart()">Bag <span id="cart-count">0</span></button>
+      <button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+    </div>
+  </header>
+
+  <div id="search-bar" class="search-bar">
+    <input id="search-input" type="search" placeholder="Search snapbacks..." oninput="renderProducts()">
+  </div>
+
+  <div id="mobile-menu" class="mobile-menu">
+    <a href="#home" onclick="toggleMenu()">Home</a>
+    <a href="#shop" onclick="toggleMenu()">Shop</a>
+    <a href="#collections" onclick="toggleMenu()">Collections</a>
+    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+  </div>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">249_STITCH / HANDMADE</p>
+        <h1>STITCHED<br><em>DIFFERENT.</em></h1>
+        <p class="hero-text">Crochet snapbacks made for people who want their headwear to look anything but ordinary.</p>
+        <a class="button" href="#shop">SHOP THE DROP</a>
+      </div>
+      <div class="hero-art">
+        <div class="crochet-card">
+          <span class="city">NY</span>
+          <small>HANDMADE<br>249_STITCH</small>
+        </div>
+        <div class="crochet-card card-two">
+          <span class="city">LA</span>
+          <small>HANDMADE<br>249_STITCH</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="ticker">
+      <span>HANDMADE</span><span>•</span><span>CROCHET</span><span>•</span><span>SNAPBACKS</span><span>•</span><span>249_STITCH</span><span>•</span><span>HANDMADE</span>
+    </section>
+
+    <section id="shop" class="section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE CURRENT DROP</p>
+          <h2>SHOP SNAPBACKS</h2>
+        </div>
+        <div class="filters">
+          <button class="filter active" data-filter="All" onclick="setFilter('All')">All</button>
+          <button class="filter" data-filter="NY" onclick="setFilter('NY')">NY</button>
+          <button class="filter" data-filter="LA" onclick="setFilter('LA')">LA</button>
+          <button class="filter" data-filter="Other" onclick="setFilter('Other')">Other</button>
+        </div>
+      </div>
+      <div id="product-grid" class="product-grid"></div>
+    </section>
+
+    <section id="collections" class="collections">
+      <div class="collection large">
+        <span>01</span>
+        <h3>NEW YORK</h3>
+        <p>Classic city energy, reworked in crochet.</p>
+        <a href="#shop" onclick="setFilter('NY')">SHOP NY →</a>
+      </div>
+      <div class="collection">
+        <span>02</span>
+        <h3>LOS ANGELES</h3>
+        <p>West Coast colors. Handmade texture.</p>
+        <a href="#shop" onclick="setFilter('LA')">SHOP LA →</a>
+      </div>
+      <div class="collection dark">
+        <span>03</span>
+        <h3>COMING SOON</h3>
+        <p>More cities. More stitches. Same 249 energy.</p>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div>
+        <p class="eyebrow">THE 249_STITCH IDEA</p>
+        <h2>NOT FACTORY.<br>NOT BORING.</h2>
+      </div>
+      <div>
+        <p>249_stitch brings streetwear-inspired city designs into handmade crochet. Every cap is designed to feel like a statement piece rather than another basic hat.</p>
+        <p>Start with the city you rep. Then make it yours.</p>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <p class="eyebrow">STAY IN THE LOOP</p>
+      <h2>FIRST TO KNOW.<br>FIRST TO COP.</h2>
+      <form onsubmit="subscribe(event)">
+        <input id="email" type="email" placeholder="Your email address" required>
+        <button class="button" type="submit">JOIN</button>
+      </form>
+      <p id="subscribe-message" class="small-message"></p>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-brand">
+      <img src="assets/logo.png" alt="">
+      <h3>249_stitch</h3>
+      <p>Crochet snapbacks. Handmade with attitude.</p>
+    </div>
+    <div>
+      <h4>SHOP</h4>
+      <a href="#shop">All Snapbacks</a>
+      <a href="#shop" onclick="setFilter('NY')">New York</a>
+      <a href="#shop" onclick="setFilter('LA')">Los Angeles</a>
+    </div>
+    <div>
+      <h4>INFO</h4>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#">Instagram</a>
+    </div>
+    <div>
+      <h4>ORDER</h4>
+      <p>Orders can be connected to WhatsApp or an online checkout later.</p>
+      <a class="button small" href="https://wa.me/" target="_blank" rel="noopener">MESSAGE US</a>
+    </div>
+    <div class="copyright">© 2026 249_stitch. All rights reserved.</div>
+  </footer>
+
+  <aside id="cart" class="cart-drawer">
+    <div class="cart-head">
+      <h2>YOUR BAG</h2>
+      <button onclick="closeCart()">×</button>
+    </div>
+    <div id="cart-items"></div>
+    <div class="cart-bottom">
+      <div><span>Subtotal</span><strong id="cart-total">EGP 0</strong></div>
+      <button class="button full" onclick="checkout()">ORDER NOW</button>
+      <p class="tiny">Checkout can be connected to WhatsApp, a form, or a payment provider.</p>
+    </div>
+  </aside>
+  <div id="overlay" class="overlay" onclick="closeCart()"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
