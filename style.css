@@ -27,21 +27,52 @@ button{cursor:pointer}
 .search-bar.open{display:block}
 .search-bar input{width:100%;padding:14px;border:1px solid var(--line);background:var(--white);outline:none}
 .mobile-menu{display:none}
-.hero{min-height:680px;padding:70px 7vw;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;overflow:hidden}
+
+/* --- UPDATED PHOTO HERO LAYOUT --- */
+.hero {
+  min-height: 80vh;
+  padding: 120px 7vw;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('assets/hero-bg.jpg') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  color: #ffffff;
+}
 .eyebrow{font-size:11px;letter-spacing:.2em;font-weight:700;margin:0 0 18px}
 .hero h1,.section-heading h2,.about h2,.newsletter h2{font-family:"Space Grotesk",sans-serif;font-size:clamp(54px,8vw,112px);line-height:.86;letter-spacing:-.065em;margin:0}
-.hero h1 em{font-style:normal;-webkit-text-stroke:1.5px var(--ink);color:transparent}
-.hero-text{max-width:470px;color:#555;margin:30px 0;font-size:17px;line-height:1.7}
+
+/* Pure solid typography style adjustments */
+.hero h1 {
+  color: #ffffff;
+}
+.hero h1 em{
+  font-style:normal;
+  -webkit-text-stroke: transparent;
+  color:#ffffff;
+}
+.hero-text{max-width:470px;color:#e5e5e0;margin:30px 0;font-size:17px;line-height:1.7}
+
+/* Contrast adjustment for the main action button */
+.hero .button {
+  background: #ffffff;
+  color: #111111;
+}
+.hero .button:hover {
+  background: var(--accent);
+  color: #111111;
+}
+
+/* Hide the old decorative cartoon circles completely */
+.hero-art, .crochet-card, .card-two {
+  display: none !important;
+}
+
+/* --- MAIN INTERFACE STYLING --- */
 .button{display:inline-flex;align-items:center;justify-content:center;border:0;background:var(--ink);color:#fff;padding:15px 23px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:.2s}
 .button:hover{background:#333;transform:translateY(-2px)}
 .button.small{padding:11px 14px;font-size:10px}
-.hero-art{height:500px;position:relative}
-.crochet-card{position:absolute;right:12%;top:5%;width:58%;height:72%;border-radius:46% 46% 42% 42%;background:repeating-linear-gradient(135deg,#171717 0,#171717 5px,#292929 6px,#111 10px);box-shadow:18px 22px 0 #d8d5cc;display:flex;align-items:center;justify-content:center;transform:rotate(7deg)}
-.crochet-card .city{font-family:"Space Grotesk";font-size:clamp(70px,10vw,130px);font-weight:700;color:#f4f2ed;border:4px solid #f4f2ed;border-radius:50%;padding:25px 18px}
-.crochet-card small{position:absolute;bottom:32px;left:30px;color:#fff;font-size:8px;letter-spacing:.16em}
-.card-two{right:46%;top:34%;width:43%;height:50%;transform:rotate(-12deg);background:repeating-linear-gradient(135deg,#e6e0d3 0,#e6e0d3 5px,#c9c0af 6px,#eee8dc 10px);box-shadow:12px 15px 0 #111}
-.card-two .city{color:#111;border-color:#111}
-.card-two small{color:#111}
 .ticker{background:var(--accent);border-top:1px solid #111;border-bottom:1px solid #111;padding:13px;display:flex;justify-content:space-around;gap:15px;font-size:11px;font-weight:800;letter-spacing:.15em}
 .section{padding:110px 5vw}
 .section-heading{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:45px}
@@ -100,18 +131,30 @@ footer p{color:#aaa;font-size:13px;line-height:1.6;max-width:260px}
 .tiny{font-size:10px;color:#888;line-height:1.5}
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:40;display:none}
 .overlay.open{display:block}
+
+/* --- COMPLETE RESPONSIVE MEDIA QUERIES --- */
 @media(max-width:900px){
-  .desktop-nav{display:none}.menu-btn{display:block}
-  .hero{grid-template-columns:1fr;min-height:auto;padding-top:55px}.hero-art{height:430px}
+  .desktop-nav{display:none}
+  .menu-btn{display:block}
+  .hero {
+    min-height: 60vh;
+    padding: 80px 6vw;
+    justify-content: center;
+    text-align: center;
+  }
+  .hero-text {
+    margin: 20px auto;
+  }
   .product-grid{grid-template-columns:repeat(2,1fr)}
-  .collections{grid-template-columns:1fr}.collection{min-height:360px;border-right:0;border-bottom:1px solid #aaa}
+  .collections{grid-template-columns:1fr}
+  .collection{min-height:360px;border-right:0;border-bottom:1px solid #aaa}
   .about{grid-template-columns:1fr;padding:80px 7vw}
   footer{grid-template-columns:1fr 1fr;padding-bottom:70px}
 }
+
 @media(max-width:560px){
   .site-header{height:68px}.brand span{font-size:16px}.brand img{width:35px;height:35px}
-  .hero{padding:45px 6vw}.hero h1{font-size:64px}.hero-art{height:350px}
-  .crochet-card{width:62%;height:70%}.card-two{width:46%}
+  .hero{padding:45px 6vw}.hero h1{font-size:64px}
   .section{padding:75px 5vw}.section-heading{display:block}.filters{margin-top:25px}
   .product-grid{gap:12px}.product-info h3{font-size:12px}
   .newsletter{padding:80px 6vw}.newsletter form{display:block}.newsletter input{width:100%;border-right:1px solid #111;margin-bottom:8px}.newsletter .button{width:100%}
